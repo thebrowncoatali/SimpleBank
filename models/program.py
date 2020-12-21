@@ -5,7 +5,7 @@ class Program():
 
 	bank_account = None
 
-	def start():
+	def start(self):
 		name = input("Please enter the name of the account holder: ") 
 		account = input("Please enter the account number [100 - 1000]: ")
 		rate = float(input("Please enter the annual interest rate percentage [> 0%]: "))
@@ -28,8 +28,8 @@ class Program():
 		self.bank_account = BankInfo(name, account, balance, rate, deposit, withdrawal)
 
 		for month in range(12):
-			balance = newAccount.monthly_balance(balance)
-			interest += newAccount.calc_interest(balance, rate)
+			balance = self.bank_account.monthly_balance(balance)
+			interest += self.bank_account.calc_interest(balance, rate)
 			print('Month {}'.format(month+1))
 			print('Balance: {:.1f}'.format(balance))
 			print('Estimated Interest: {:.2f}'.format(interest))
